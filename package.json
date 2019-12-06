@@ -5,22 +5,22 @@
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
     "@absolunet/fsp": "^1.6.2",
-    "@babel/runtime": "^7.7.4",
+    "@babel/runtime": "^7.7.5",
     "adobe-node": "^2.0.0",
     "has-content": "^1.1.0",
-    "jaid-core": "^5.8.0",
+    "jaid-core": "^5.9.0",
     "lodash": "^4.17.15",
     "zahl": "^2.0.3"
   },
   "devDependencies": {
     "acorn": "^7.1.0",
-    "babel-preset-jaid": "^6.11.2",
+    "babel-preset-jaid": "^6.11.3",
     "browserslist-config-jaid-web": "^2.3.0",
     "eslint": "^6.7.2",
     "eslint-config-jaid": "^1.41.0",
     "rimraf": "^3.0.0",
     "webpack": "^4.41.2",
-    "webpack-config-jaid": "^5.32.1"
+    "webpack-config-jaid": "^5.32.2"
   },
   "scripts": {
     "clean": "rimraf dist/",
