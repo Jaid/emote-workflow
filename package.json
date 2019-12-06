@@ -20,7 +20,7 @@
     "eslint-config-jaid": "^1.41.0",
     "rimraf": "^3.0.0",
     "webpack": "^4.41.2",
-    "webpack-config-jaid": "^5.34.0"
+    "webpack-config-jaid": "^5.35.0"
   },
   "scripts": {
     "clean": "rimraf dist/",
