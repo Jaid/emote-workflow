@@ -1,11 +1,12 @@
 {
-  "title": "GitHub Release Writer",
-  "webpackConfigJaid": "cli",
+  "title": "Emote Workflow",
+  "webpackConfigJaid": "adobeCep",
   "version": "0.1.0",
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
     "@absolunet/fsp": "^1.6.2",
     "@babel/runtime": "^7.7.4",
+    "adobe-node": "^2.0.0",
     "has-content": "^1.1.0",
     "jaid-core": "^5.8.0",
     "lodash": "^4.17.15",
@@ -14,7 +15,7 @@
   "devDependencies": {
     "acorn": "^7.1.0",
     "babel-preset-jaid": "^6.11.2",
-    "browserslist-config-jaid-node": "^2.2.2",
+    "browserslist-config-jaid-web": "^2.3.0",
     "eslint": "^6.7.2",
     "eslint-config-jaid": "^1.41.0",
     "rimraf": "^3.0.0",
@@ -36,5 +37,5 @@
     "prepareActionJest": "npm run build:prod"
   },
   "name": "emote-workflow",
-  "description": "Generates and inserts changelogs into GitHub releases for Node packages."
+  "description": "Script collection for Adobe Illustrator, bundled as a CEP extension."
 }
