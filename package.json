@@ -8,7 +8,6 @@
     "@babel/runtime": "^7.7.5",
     "adobe-node": "^2.0.0",
     "has-content": "^1.1.0",
-    "jaid-core": "^5.9.0",
     "lodash": "^4.17.15",
     "zahl": "^2.0.3"
   },
