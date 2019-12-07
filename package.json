@@ -33,7 +33,9 @@
     "test:coverage": "npm run test:dev -- --coverage --json --outputFile=dist/jest/stats.json",
     "test:dev": "npm run build:dev && NODE_ENV=test MAIN=$(npx find-by-extension-cli js --fullPath --cwd dist/package/development) jest --runInBand",
     "test:debug": "npm run start",
-    "prepareActionJest": "npm run build:prod"
+    "prepareActionJest": "npm run build:prod",
+    "register": "name=$(npx package-name-cli) && npm run build:dev && mkdir --parents ~/AppData/Roaming/adobe/CEP/extensions && rimraf ~/AppData/Roaming/adobe/CEP/extensions/$name && cp --recursive dist/package/development ~/AppData/Roaming/adobe/CEP/extensions/$name",
+    "startApp": "'C:/Program Files/Adobe/Adobe Illustrator CC 2019/Support Files/Contents/Windows/Illustrator.exe'"
   },
   "name": "emote-workflow",
   "description": "Script collection for Adobe Illustrator, bundled as a CEP extension."

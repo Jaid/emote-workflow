@@ -1,5 +1,9 @@
 import configure from "webpack-config-jaid"
 
 export default configure({
-  friendlyErrors: false,
+  cepOptions: {
+    apps: {
+      illustrator: "23.0",
+    },
+  },
 })
