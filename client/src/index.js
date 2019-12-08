@@ -1,9 +1,12 @@
 /* eslint-disable no-undef */
 
-import abc from "./functions/abc"
+if (!$._ext) {
+  $._ext = {}
+}
 
-this.a = 2
-this.b = () => 2
+$._ext.x = function () {
+  return 2
+}
 // const functions = {}
 // const functionRequire = require.context("./functions/", true, /index.js$/)
 // for (const value of functionRequire.keys()) {

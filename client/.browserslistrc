@@ -1,1 +1,1 @@
-extends browserslist-config-jaid-node
+node >= 8
