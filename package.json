@@ -5,7 +5,7 @@
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
     "@absolunet/fsp": "^1.6.2",
-    "@babel/runtime": "^7.7.5",
+    "@babel/runtime": "^7.7.6",
     "@tippy.js/react": "^3.1.1",
     "adobe-node": "^2.0.0",
     "classnames": "^2.2.6",
@@ -42,7 +42,7 @@
     "redux-logger": "^3.0.6",
     "rimraf": "^3.0.0",
     "webpack": "^4.41.2",
-    "webpack-config-jaid": "^7.0.1"
+    "webpack-config-jaid": "^7.0.2"
   },
   "scripts": {
     "clean": "rimraf dist/",
