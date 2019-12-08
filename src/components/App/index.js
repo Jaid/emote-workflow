@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import {connect} from "react-redux"
 
-import functions from "lib/functions"
+import functions from "lib/functions.yml"
 import FunctionButton from "components/FunctionButton"
 
 import css from "./style.scss"

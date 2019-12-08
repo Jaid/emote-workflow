@@ -1,4 +1,5 @@
 import classnames from "classnames"
+import {isString} from "lodash"
 import PropTypes from "prop-types"
 import React from "react"
 
@@ -34,8 +35,12 @@ export default class FunctionButton extends React.Component {
 
   handleClick() {
     this.setState({phase: "running"})
-    window.api.evalScript(`$.functions.${this.props.functionName}()`, result => {
-      console.log(result)
+    window.api.evalScript(`functions.${this.props.functionName}()`, result => {
+      if (isString(result)) {
+        console.log(result)
+        this.setState({phase: "error"})
+        return
+      }
       this.setState({phase: "success"})
     })
   }
@@ -48,7 +53,7 @@ export default class FunctionButton extends React.Component {
         success: "#c5ffca",
       }[this.state.phase] || "white",
     }
-    return <div className={classnames(css.container, this.props.className)} style={style} onClick={this.handleClick}>
+    return <div className={classnames(css.container, this.props.className)} style={style} onClick={() => this.handleClick()}>
       {this.props.title}
     </div>
   }
