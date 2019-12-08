@@ -1,17 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
-if (!$._ext) {
-  $._ext = {}
+if (!$.functions) {
+  $.functions = {}
 }
 
-$._ext.x = function () {
-  return 2
+$.functions.init = function () {
+  const document = app.documents.add(DocumentColorSpace.RGB)
+  const newLayer = document.layers.add()
+  newLayer.name = "Test"
+  return true
 }
-// const functions = {}
-// const functionRequire = require.context("./functions/", true, /index.js$/)
-// for (const value of functionRequire.keys()) {
-//   const {functionName} = value.match(/[/\\](?<functionName>.+?)[/\\]index\.js$/).groups
-//   functions[functionName] = functionRequire(value).default
-// }
-
-app.documents.add()

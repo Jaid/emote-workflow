@@ -3,6 +3,8 @@ import {isString} from "lodash"
 import PropTypes from "prop-types"
 import React from "react"
 
+import api from "lib/api"
+
 import css from "./style.scss"
 
 /**
@@ -35,8 +37,8 @@ export default class FunctionButton extends React.Component {
 
   handleClick() {
     this.setState({phase: "running"})
-    window.api.evalScript(`functions.${this.props.functionName}()`, result => {
-      if (isString(result)) {
+    api.evalScript(`$.functions.${this.props.functionName}()`, result => {
+      if (isString(result) && result !== "true") {
         console.log(result)
         this.setState({phase: "error"})
         return

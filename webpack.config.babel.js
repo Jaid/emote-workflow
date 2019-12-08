@@ -9,4 +9,7 @@ export default configure({
     },
     scriptSourceFile: path.join(__dirname, "client", "dist", "package", process.env.NODE_ENV || "development", "index.js"),
   },
+  extra: {
+    target: "node",
+  },
 })

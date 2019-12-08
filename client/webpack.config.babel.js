@@ -9,9 +9,6 @@ const extra = {
   output: {
     libraryTarget: "var",
   },
-  optimization: {
-    minimize: false,
-  },
 }
 
 export default configure({

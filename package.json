@@ -12,6 +12,7 @@
     "cep-lib": "^0.1.0",
     "classnames": "^2.2.6",
     "debug": "^4.1.1",
+    "globby": "^10.0.1",
     "has-content": "^1.1.0",
     "howler": "^2.1.2",
     "immer": "^5.0.0",
