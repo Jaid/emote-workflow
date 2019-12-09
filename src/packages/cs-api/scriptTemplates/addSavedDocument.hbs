@@ -1,6 +1,6 @@
-$.document = app.documents.add(DocumentColorSpace.RGB)
+$.document = app.documents.add(DocumentColorSpace.RGB, {{{json width}}}, {{{json height}}})
 $.saveOptions = new IllustratorSaveOptions()
 $.saveOptions.compressed = false
 $.saveOptions.pdfCompatible = false
-$.file = new File({{file}})
+$.file = new File({{{json file}}})
 $.document.saveAs($.file, $.saveOptions)

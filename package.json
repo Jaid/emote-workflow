@@ -14,6 +14,8 @@
     "classnames": "^2.2.6",
     "debug": "^4.1.1",
     "globby": "^10.0.1",
+    "handlebars": "^4.5.3",
+    "handlebars-helper-json": "^1.0.0",
     "has-content": "^1.1.0",
     "howler": "^2.1.2",
     "immer": "^5.0.0",

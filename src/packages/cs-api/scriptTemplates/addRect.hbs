@@ -1,0 +1,13 @@
+$.layer = $.document.layers.getByName({{{json layerName}}})
+$.color = new RGBColor()
+$.color.red = {{{json red}}}
+$.color.green = {{{json green}}}
+$.color.blue = {{{json blue}}}
+$.item = $.layer.pathItems.rectangle({{{json top}}}, {{{json left}}}, {{{json width}}}, {{{json height}}})
+$.item.strokeWidth = {{{json strokeWidth}}}
+$.item.fillColor = $.color
+$.item.strokeColor = $.color
+$.item.filled = {{{json filled}}}
+$.item.stroked = {{{json stroked}}}
+$.item.opacity = {{{json opacity}}}
+$.item.name = {{{json itemName}}}
