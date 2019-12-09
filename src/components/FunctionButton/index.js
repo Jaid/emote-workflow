@@ -10,7 +10,9 @@ import css from "./style.scss"
 /**
   * @typedef {{
   *   className: *,
-  *   title: string
+  *   title: string,
+  *   functionName: string,
+  *   emote: string
   * }} Props
   */
 
@@ -29,6 +31,7 @@ export default class FunctionButton extends React.Component {
     ]),
     title: PropTypes.string.isRequired,
     functionName: PropTypes.string.isRequired,
+    emote: PropTypes.string.isRequired,
   }
 
   state = {
@@ -37,7 +40,7 @@ export default class FunctionButton extends React.Component {
 
   handleClick() {
     this.setState({phase: "running"})
-    api.evalScript(`$.functions.${this.props.functionName}()`, result => {
+    api.evalScript(`$.functions.${this.props.functionName}("${this.props.emote}")`, result => {
       if (isString(result) && result !== "true") {
         console.log(result)
         this.setState({phase: "error"})

@@ -1,3 +1,6 @@
-import {CSInterface} from "@cep/csinterface"
+import Api from "src/packages/cs-api"
 
-export default new CSInterface
+const api = new Api
+window.api = api
+
+export default api

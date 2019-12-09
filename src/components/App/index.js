@@ -1,17 +1,16 @@
 import classnames from "classnames"
 import PropTypes from "prop-types"
 import React from "react"
-import {connect} from "react-redux"
+import {Field, reduxForm} from "redux-form"
 
-import functions from "lib/functions.yml"
 import EmoteSelect from "components/EmoteSelect"
-import FunctionButton from "components/FunctionButton"
+import FunctionButtonList from "components/FunctionButtonList"
 
 import css from "./style.scss"
 
-@connect(state => ({
-  loginInfo: state.login,
-}))
+@reduxForm({
+  form: "controls",
+})
 export default class extends React.Component {
 
   static propTypes = {
@@ -24,7 +23,12 @@ export default class extends React.Component {
   }
 
   render() {
-    return <EmoteSelect/>
+    return <div className={classnames(css.container, this.props.className)}>
+      <form>
+        <Field component={EmoteSelect} name="emote"/>
+      </form>
+      <FunctionButtonList/>
+    </div>
     // const buttons = []
     // for (const [functionName, properties] of Object.entries(functions)) {
     //   buttons.push(<FunctionButton key={functionName} functionName={functionName} {...properties}/>)

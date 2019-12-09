@@ -19,4 +19,5 @@ export default configure({
   outDir: path.join(__dirname, "dist", "package", process.env.NODE_ENV || "development"),
   type: "nodeScript",
   configOutput: true,
+  nodeExternals: false,
 })
