@@ -39,14 +39,16 @@ export default class FunctionButton extends React.Component {
   }
 
   handleClick() {
+    const myFunction = require(`./functions/${this.props.functionName}`).default
     this.setState({phase: "running"})
-    api.evalScript(`$.functions.${this.props.functionName}("${this.props.emote}")`, result => {
-      if (isString(result) && result !== "true") {
+    myFunction(this.props.emote).then(result => {
+      if (result !== undefined) {
         console.log(result)
-        this.setState({phase: "error"})
-        return
       }
       this.setState({phase: "success"})
+    }).catch(error => {
+      console.error(error)
+      this.setState({phase: "error"})
     })
   }
 

@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import {connect} from "react-redux"
 
-import api from "lib/api"
 import FunctionButton from "components/FunctionButton"
 
 import functions from "./functions.yml"
@@ -38,7 +37,6 @@ export default class FunctionButtonList extends React.Component {
   }
 
   render() {
-    api.addDocument()
     if (isEmpty(this.props.emote)) {
       return null
     }
