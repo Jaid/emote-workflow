@@ -43,6 +43,10 @@ export default class FunctionButton extends React.Component {
     this.setState({phase: "running"})
     myFunction(this.props.emote).then(result => {
       if (result !== undefined) {
+        if (result === false) {
+          this.setState({phase: "error"})
+          return
+        }
         console.log(result)
       }
       this.setState({phase: "success"})

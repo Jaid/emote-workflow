@@ -29,15 +29,6 @@ export default class extends React.Component {
       </form>
       <FunctionButtonList/>
     </div>
-    // const buttons = []
-    // for (const [functionName, properties] of Object.entries(functions)) {
-    //   buttons.push(<FunctionButton key={functionName} functionName={functionName} {...properties}/>)
-    // }
-    // return <div className={classnames(css.container, this.props.className)}>
-    //   Hi
-    //   <hr/>
-    //   {buttons}
-    // </div>
   }
 
 }

@@ -1,0 +1,6 @@
+$.document = app.documents.add(DocumentColorSpace.RGB)
+$.saveOptions = new IllustratorSaveOptions()
+$.saveOptions.compressed = false
+$.saveOptions.pdfCompatible = false
+$.file = new File({{file}})
+$.document.saveAs($.file, $.saveOptions)
