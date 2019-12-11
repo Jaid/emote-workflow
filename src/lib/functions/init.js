@@ -28,18 +28,21 @@ export default async emote => {
   await api.fillLayer("Background", backgroundRed, backgroundGreen, backgroundBlue)
   await api.lockLayer("Background")
   await api.addLayerWithColor("Emote Bounds", 111, 157, 124)
-  // await api.addRect({
-  //   layerName: "Emote Bounds",
-  //   red: 255,
-  //   opacity: 10,
-  //   top: 75,
-  //   left: 25,
-  //   height: 50,
-  //   width: 50,
-  //   filled: false,
-  //   stroked: true,
-  //   strokeWidth: 20,
-  // })
+  await api.addRect({
+    layerName: "Emote Bounds",
+    red: 255,
+    blue: 0,
+    green: 0,
+    opacity: 10,
+    top: documentScale(0.75),
+    left: documentScale(0.25),
+    height: documentScale(0.5),
+    width: documentScale(0.5),
+    filled: false,
+    stroked: true,
+    strokeWidth: 1,
+  })
+  await api.setLayerOpacity("Emote Bounds", 50)
   await api.lockLayer("Emote Bounds")
   const draftFile = path.join(emoteFolder, "draft.png")
   const draftFileExists = await fsp.pathExists(draftFile)
