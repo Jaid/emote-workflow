@@ -33,7 +33,6 @@ export default async emote => {
     red: 255,
     blue: 0,
     green: 0,
-    opacity: 10,
     top: documentScale(0.75),
     left: documentScale(0.25),
     height: documentScale(0.5),
@@ -42,7 +41,7 @@ export default async emote => {
     stroked: true,
     strokeWidth: 1,
   })
-  await api.setLayerOpacity("Emote Bounds", 50)
+  await api.setLayerOpacity("Emote Bounds", 20)
   await api.lockLayer("Emote Bounds")
   const draftFile = path.join(emoteFolder, "draft.png")
   const draftFileExists = await fsp.pathExists(draftFile)
