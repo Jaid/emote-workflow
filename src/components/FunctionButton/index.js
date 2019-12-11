@@ -12,7 +12,8 @@ import css from "./style.scss"
   *   className: *,
   *   title: string,
   *   functionName: string,
-  *   emote: string
+  *   emote: string,
+  *   handler: function
   * }} Props
   */
 
@@ -31,6 +32,7 @@ export default class FunctionButton extends React.Component {
     ]),
     title: PropTypes.string.isRequired,
     functionName: PropTypes.string.isRequired,
+    handler: PropTypes.func.isRequired,
     emote: PropTypes.string.isRequired,
   }
 
@@ -39,9 +41,8 @@ export default class FunctionButton extends React.Component {
   }
 
   handleClick() {
-    const myFunction = require(`./functions/${this.props.functionName}`).default
     this.setState({phase: "running"})
-    myFunction(this.props.emote).then(result => {
+    this.props.handler(this.props.emote).then(result => {
       if (result !== undefined) {
         if (result === false) {
           this.setState({phase: "error"})

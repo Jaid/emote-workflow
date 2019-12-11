@@ -1,0 +1,6 @@
+$.layer = $.document.layers.getByName({{{json name}}})
+$.document.selection = null
+for ($.i = 0; $.i < $.layer.pathItems.length; $.i++) {
+  $.item = $.layer.pathItems[$.i]
+  $.item.selected = true
+}

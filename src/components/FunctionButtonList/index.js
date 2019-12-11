@@ -6,8 +6,14 @@ import {connect} from "react-redux"
 
 import FunctionButton from "components/FunctionButton"
 
-import functions from "./functions.yml"
 import css from "./style.scss"
+
+const functions = {
+  init: require("lib/functions/init"),
+  finishOutline: require("lib/functions/finishOutline"),
+  finishWidthChanges: require("lib/functions/finishWidthChanges"),
+  finishOverlapRemoval: require("lib/functions/finishOverlapRemoval"),
+}
 
 /**
   * @typedef {{
@@ -43,7 +49,7 @@ export default class FunctionButtonList extends React.Component {
     const buttons = []
     for (const [functionName, properties] of Object.entries(functions)) {
       const key = `${this.props.emote}-${functionName}`
-      buttons.push(<FunctionButton key={key} emote={this.props.emote} functionName={functionName} {...properties}/>)
+      buttons.push(<FunctionButton key={key} emote={this.props.emote} functionName={functionName} handler={properties.default} title={properties.title}/>)
     }
     return <div className={classnames(css.container, this.props.className)}>
       {buttons}

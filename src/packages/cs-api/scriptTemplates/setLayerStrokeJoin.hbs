@@ -1,0 +1,5 @@
+$.layer = $.document.layers.getByName({{{json name}}})
+for ($.i = 0; $.i < $.layer.pathItems.length; $.i++) {
+  $.item = $.layer.pathItems[$.i]
+  $.item.strokeJoin = StrokeJoin.{{strokeJoin}}
+}

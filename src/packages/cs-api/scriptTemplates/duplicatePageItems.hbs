@@ -1,0 +1,6 @@
+$.layer = $.document.layers.getByName({{{json sourceLayer}}})
+$.targetLayer = $.document.layers.getByName({{{json targetLayer}}})
+for ($.i = 0; $.i < $.layer.pageItems.length; $.i++) {
+  $.item = $.layer.pageItems[$.i]
+  $.item.duplicate($.targetLayer)
+}

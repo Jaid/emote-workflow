@@ -3,11 +3,19 @@ $.color = new RGBColor()
 $.color.red = {{{json red}}}
 $.color.green = {{{json green}}}
 $.color.blue = {{{json blue}}}
-$.item = $.layer.pathItems.rectangle({{{json top}}}, {{{json left}}}, {{{json width}}}, {{{json height}}})
+$.item = $.layer.pathItems.rectangle({{{json top}}}, {{{json left}}}, {{{json width}}}, {{{json height}}}, {{{json reversed}}})
 $.item.strokeWidth = {{{json strokeWidth}}}
+{{#if filled}}
 $.item.fillColor = $.color
+$.item.filled = true
+{{else}}
+$.item.filled = false
+{{/if}}
+{{#if stroked}}
 $.item.strokeColor = $.color
-$.item.filled = {{{json filled}}}
-$.item.stroked = {{{json stroked}}}
+$.item.stroked = true
+{{else}}
+$.item.stroked = false
+{{/if}}
 $.item.opacity = {{{json opacity}}}
 $.item.name = {{{json itemName}}}

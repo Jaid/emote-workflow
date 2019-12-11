@@ -1,0 +1,12 @@
+$.layer = $.document.layers.getByName({{{json layerName}}})
+$.item = $.layer.placedItems.add()
+$.file = new File({{{json file}}})
+$.item.file = $.file
+$.item.width = {{{json width}}}
+$.item.height = {{{json height}}}
+$.item.top = {{{json top}}}
+$.item.left = {{{json left}}}
+$.item.opacity = {{{json opacity}}}
+{{#if embedded}}
+$.item.embed()
+{{/if}}
