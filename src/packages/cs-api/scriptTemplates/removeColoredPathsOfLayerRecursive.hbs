@@ -1,0 +1,34 @@
+$.document.selection = null
+$.layer = $.document.layers.getByName({{{json name}}})
+$.selectLayerPaths = function(layerObject) {
+  var length = layerObject.pathItems.length
+  var itemsToRemove = []
+  for (var i = 0; i < length; i++) {
+    var item = layerObject.pathItems[i]
+    if (!item.filled) {
+      continue
+    }
+    var itemColor = item.fillColor
+    if (itemColor.red !== {{{json red}}}) {
+      continue
+    }
+    if (itemColor.green !== {{{json green}}}) {
+      continue
+    }
+    if (itemColor.blue !== {{{json blue}}}) {
+      continue
+    }
+    itemsToRemove.push(item)
+  }
+  length = itemsToRemove.length
+  for (i = 0; i < length; i++) {
+    var item = itemsToRemove[i]
+    item.remove()
+  }
+  length = layerObject.groupItems.length
+  for (i = 0; i < length; i++) {
+    var item = layerObject.groupItems[i]
+    $.selectLayerPaths(item)
+  }
+}
+$.selectLayerPaths($.layer)

@@ -1,18 +1,15 @@
+$.document.selection = null
 $.layer = $.document.layers.getByName({{{json name}}})
-$.color = new RGBColor()
-$.color.red = {{{json red}}}
-$.color.green = {{{json green}}}
-$.color.blue = {{{json blue}}}
-$.setLayerItemsColor = function(layerObject) {
+$.selectLayerPaths = function(layerObject) {
   var length = layerObject.pathItems.length
   for (var i = 0; i < length; i++) {
     var item = layerObject.pathItems[i]
-    item.fillColor = $.color
+    item.selected = true
   }
   length = layerObject.groupItems.length
   for (i = 0; i < length; i++) {
     var item = layerObject.groupItems[i]
-    $.setLayerItemsColor(item)
+    $.selectLayerPaths(item)
   }
 }
-$.setLayerItemsColor($.layer)
+$.selectLayerPaths($.layer)

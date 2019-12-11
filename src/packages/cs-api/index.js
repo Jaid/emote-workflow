@@ -383,6 +383,19 @@ export default class Api extends CSInterface {
    * @param {string} targetLayer
    * @return {Promise<void>}
    */
+  async duplicateLayer(sourceLayer, targetLayer) {
+    const context = {
+      sourceLayer,
+      targetLayer,
+    }
+    await this.evalScriptTemplate("duplicateLayer", context)
+  }
+
+  /**
+   * @param {string} sourceLayer
+   * @param {string} targetLayer
+   * @return {Promise<void>}
+   */
   async placeLayerAboveLayer(sourceLayer, targetLayer) {
     const context = {
       sourceLayer,
@@ -406,12 +419,12 @@ export default class Api extends CSInterface {
 
   /**
    * @param {string} name
-   * @param {number} red
-   * @param {number} green
-   * @param {number} blue
+   * @param {number} [red=0]
+   * @param {number} [green=0]
+   * @param {number} [blue=0]
    * @return {Promise<void>}
    */
-  async setLayerItemsColor(name, red, green, blue) {
+  async setLayerItemsColor(name, red = 0, green = 0, blue = 0) {
     const context = {
       name,
       red,
@@ -425,11 +438,39 @@ export default class Api extends CSInterface {
    * @param {string} name
    * @return {Promise<void>}
    */
+  async selectPathsOfLayerRecursive(name) {
+    const context = {
+      name,
+    }
+    await this.evalScriptTemplate("selectPathsOfLayerRecursive", context)
+  }
+
+  /**
+   * @param {string} name
+   * @return {Promise<void>}
+   */
   async unlockLayer(name) {
     const context = {
       name,
     }
     await this.evalScriptTemplate("unlockLayer", context)
+  }
+
+  /**
+   * @param {string} name
+   * @param {number} red
+   * @param {number} green
+   * @param {number} blue
+   * @return {Promise<void>}
+   */
+  async removeColoredPathsOfLayerRecursive(name, red = 0, green = 0, blue = 0) {
+    const context = {
+      name,
+      red,
+      green,
+      blue,
+    }
+    await this.evalScriptTemplate("removeColoredPathsOfLayerRecursive", context)
   }
 
   /**

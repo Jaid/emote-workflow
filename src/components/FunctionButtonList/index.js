@@ -13,6 +13,8 @@ const functions = {
   finishOutline: require("lib/functions/finishOutline"),
   finishWidthChanges: require("lib/functions/finishWidthChanges"),
   finishOverlapRemoval: require("lib/functions/finishOverlapRemoval"),
+  finishPaint: require("lib/functions/finishPaint"),
+  finishMergedSilhouette: require("lib/functions/finishMergedSilhouette"),
 }
 
 /**
