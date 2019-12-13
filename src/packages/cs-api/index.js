@@ -481,6 +481,41 @@ export default class Api extends CSInterface {
   }
 
   /**
+   * @param {string} file
+   * @return {Promise<void>}
+   */
+  async exportSvg(file) {
+    const context = {
+      file,
+    }
+    await this.evalScriptTemplate("exportSvg", context)
+  }
+
+  /**
+   * @param {string} file
+   * @param {number} [scale=100]
+   * @return {Promise<void>}
+   */
+  async exportPng(file, scale = 100) {
+    const context = {
+      file,
+      scale,
+    }
+    await this.evalScriptTemplate("exportPng", context)
+  }
+
+  /**
+   * @param {string} file
+   * @return {Promise<void>}
+   */
+  async exportTiff(file) {
+    const context = {
+      file,
+    }
+    await this.evalScriptTemplate("exportTiff", context)
+  }
+
+  /**
    * @return {Promise<void>}
    */
   async unsetSelection() {

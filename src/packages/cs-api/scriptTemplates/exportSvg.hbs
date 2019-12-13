@@ -1,0 +1,8 @@
+$.file = new File({{{json file}}})
+$.options = new ExportOptionsSVG()
+$.options.embedRasterImages = true
+$.options.documentEncoding = SVGDocumentEncoding.UTF8
+$.options.compressed = true
+$.options.embedAllFonts = false
+$.options.fontSubsetting = SVGFontSubsetting.GLYPHSUSED
+$.document.exportFile($.file, ExportType.SVG, $.options)

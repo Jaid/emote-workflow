@@ -15,6 +15,8 @@ const functions = {
   finishOverlapRemoval: require("lib/functions/finishOverlapRemoval"),
   finishPaint: require("lib/functions/finishPaint"),
   finishMergedSilhouette: require("lib/functions/finishMergedSilhouette"),
+  exportPng: require("lib/functions/exportPng"),
+  exportSvg: require("lib/functions/exportSvg"),
 }
 
 /**

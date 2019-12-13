@@ -1,0 +1,6 @@
+$.file = new File({{{json file}}})
+$.options = new ExportOptionsPNG24()
+$.options.transparency = true
+$.options.horizontalScale = {{{json scale}}}
+$.options.verticalScale = {{{json scale}}}
+$.document.exportFile($.file, ExportType.PNG24, $.options)

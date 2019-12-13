@@ -6,6 +6,7 @@ export const hintBefore = "Choose the Shape Builder tool, hold Alt and draw over
 
 export default async emote => {
 
+  await api.hideLayer("Background")
   await api.selectPathsOfLayer("Outline")
   await api.executeMenuCommand("Make Planet X")
   await api.duplicateLayer("Outline", "Filling")
