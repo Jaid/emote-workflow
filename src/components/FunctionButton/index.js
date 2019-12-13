@@ -75,7 +75,7 @@ export default class FunctionButton extends React.Component {
     }
     let hintAfter
     if (this.props.hintAfter) {
-      hintBefore = <div className={css.hint}>{this.props.hintAfter}</div>
+      hintAfter = <div className={css.hint}>{this.props.hintAfter}</div>
     }
     return <div className={css.container}>
       {hintBefore}
