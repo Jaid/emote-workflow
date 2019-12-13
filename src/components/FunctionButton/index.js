@@ -13,7 +13,9 @@ import css from "./style.scss"
   *   title: string,
   *   functionName: string,
   *   emote: string,
-  *   handler: function
+  *   handler: function,
+  *   hintBefore: string,
+  *   hintAfter: string
   * }} Props
   */
 
@@ -34,6 +36,8 @@ export default class FunctionButton extends React.Component {
     functionName: PropTypes.string.isRequired,
     handler: PropTypes.func.isRequired,
     emote: PropTypes.string.isRequired,
+    hintBefore: PropTypes.string,
+    hintAfter: PropTypes.string,
   }
 
   state = {
@@ -65,8 +69,20 @@ export default class FunctionButton extends React.Component {
         success: "#c5ffca",
       }[this.state.phase] || "white",
     }
-    return <div className={classnames(css.container, this.props.className)} style={style} onClick={() => this.handleClick()}>
-      {this.props.title}
+    let hintBefore
+    if (this.props.hintBefore) {
+      hintBefore = <div className={css.hint}>{this.props.hintBefore}</div>
+    }
+    let hintAfter
+    if (this.props.hintAfter) {
+      hintBefore = <div className={css.hint}>{this.props.hintAfter}</div>
+    }
+    return <div className={css.container}>
+      {hintBefore}
+      <div className={css.button} style={style} onClick={() => this.handleClick()}>
+        {this.props.title}
+      </div>
+      {hintAfter}
     </div>
   }
 

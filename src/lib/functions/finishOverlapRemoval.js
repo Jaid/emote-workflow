@@ -2,6 +2,8 @@ import api from "lib/api"
 
 export const title = "Finish outline overlap removal"
 
+export const hintBefore = "Choose the Shape Builder tool, hold Alt and draw over unwanted outline segments to remove them."
+
 export default async emote => {
 
   await api.selectPathsOfLayer("Outline")

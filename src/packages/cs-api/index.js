@@ -425,13 +425,7 @@ export default class Api extends CSInterface {
    * @return {Promise<void>}
    */
   async setLayerItemsColor(name, red = 0, green = 0, blue = 0) {
-    const context = {
-      name,
-      red,
-      green,
-      blue,
-    }
-    await this.evalScriptTemplate("setLayerItemsColor", context)
+    await this.forPathsInLayerRecursive(name, `var color = new RGBColor(); color.red = ${red}; color.green = ${green}; color.blue = ${blue}; item.fillColor = color`)
   }
 
   /**
@@ -471,6 +465,19 @@ export default class Api extends CSInterface {
       blue,
     }
     await this.evalScriptTemplate("removeColoredPathsOfLayerRecursive", context)
+  }
+
+  /**
+   * @param {string} layerName
+   * @param {string} script
+   * @return {Promise<void>}
+   */
+  async forPathsInLayerRecursive(layerName, script) {
+    const context = {
+      layerName,
+      script,
+    }
+    await this.evalScriptTemplate("forPathsInLayerRecursive", context)
   }
 
   /**

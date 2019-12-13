@@ -51,7 +51,7 @@ export default class FunctionButtonList extends React.Component {
     const buttons = []
     for (const [functionName, properties] of Object.entries(functions)) {
       const key = `${this.props.emote}-${functionName}`
-      buttons.push(<FunctionButton key={key} emote={this.props.emote} functionName={functionName} handler={properties.default} title={properties.title}/>)
+      buttons.push(<FunctionButton key={key} emote={this.props.emote} functionName={functionName} handler={properties.default} hintAfter={properties.hintAfter} hintBefore={properties.hintBefore} title={properties.title}/>)
     }
     return <div className={classnames(css.container, this.props.className)}>
       {buttons}

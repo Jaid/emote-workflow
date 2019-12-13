@@ -1,4 +1,9 @@
 .container {
+  margin: 8px;
+}
+
+.button {
+  width     : 100px;
   text-align: center;
   padding   : 4px;
   cursor    : pointer;
@@ -6,4 +11,9 @@
   &:hover {
     color: yellow
   }
+}
+
+.hint {
+  color    : gray;
+  font-size: 12px;
 }

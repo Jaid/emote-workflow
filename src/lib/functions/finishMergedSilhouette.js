@@ -2,6 +2,10 @@ import api from "lib/api"
 
 export const title = "Finish merged Silhouette"
 
+export const hintBefore = "Focus and select the Silhouette layer. Apply 'Pathfinder -> Pathfinders: -> Merge (the third one).'"
+
+export const hintAfter = "Remaining steps: Removed some Light and Shadow areas with the Knife tool. Colorizing the Outline layer with Live Paint."
+
 export default async emote => {
 
   await api.lockLayer("Silhouette")

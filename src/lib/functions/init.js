@@ -12,6 +12,10 @@ const documentScale = length => length * 1000
 
 export const title = "Start"
 
+export const hintBefore = "Have an emote folder in 'E:/Emote Projects' prepared. It should contain file Draft.png for an optimal starting point."
+
+export const hintAfter = "This creates a properly set up .ai file in the emote folder or opens it if it already exists."
+
 export default async emote => {
 
   const emoteFolder = path.join("E:", "Emote Projects", emote)

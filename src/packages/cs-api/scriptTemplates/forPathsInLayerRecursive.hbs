@@ -1,0 +1,23 @@
+$.layer = $.document.layers.getByName({{{json layerName}}})
+$.selectLayerPaths = function(layerObject) {
+  var length = layerObject.pathItems.length
+  for (var i = 0; i < length; i++) {
+    var item = layerObject.pathItems[i]
+    {{{script}}}
+  }
+  if (layerObject.groupItems) {
+    length = layerObject.groupItems.length
+    for (i = 0; i < length; i++) {
+      var item = layerObject.groupItems[i]
+      $.selectLayerPaths(item)
+    }
+  }
+  if (layerObject.compoundPathItems) {
+    length = layerObject.compoundPathItems.length
+    for (i = 0; i < length; i++) {
+      var item = layerObject.compoundPathItems[i]
+      $.selectLayerPaths(item)
+    }
+  }
+}
+$.selectLayerPaths($.layer)
