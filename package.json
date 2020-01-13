@@ -73,5 +73,9 @@
   },
   "name": "emote-workflow",
   "description": "Script collection for Adobe Illustrator, bundled as a CEP extension.",
-  "funding": "https://github.com/sponsors/jaid"
+  "funding": "https://github.com/sponsors/jaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaid/emote-workflow"
+  }
 }
