@@ -72,5 +72,6 @@
     "openInAppdata": "open-cli 'C:/Users/Jaid/AppData/Roaming/Adobe/CEP/extensions/emote-workflow'"
   },
   "name": "emote-workflow",
-  "description": "Script collection for Adobe Illustrator, bundled as a CEP extension."
+  "description": "Script collection for Adobe Illustrator, bundled as a CEP extension.",
+  "funding": "https://github.com/sponsors/jaid"
 }
