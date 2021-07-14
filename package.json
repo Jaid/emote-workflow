@@ -51,7 +51,7 @@
     "rimraf": "^3.0.2",
     "types-for-adobe": "^1.6.1",
     "webpack": "^4.42.1",
-    "webpack-config-jaid": "^11.8.0"
+    "webpack-config-jaid": "^15.0.0"
   },
   "scripts": {
     "clean": "rimraf dist/",
